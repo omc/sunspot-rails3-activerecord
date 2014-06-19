@@ -1,0 +1,19 @@
+%h3
+  Try typing the word 'post' into each of these text fields to see autocomplete and autosuggest with Solr examples.
+%p
+  Autocomplete w/ Solr for Post.title example
+  %br
+  This will match posts with titles that start with what the user enters here.
+  %br
+  = text_field_tag 'query', params[:query] || nil, :name => "query", :autocomplete => "off", :class => 'autocomplete', :size => 50
+  %br
+  %br
+%p
+  Autosuggest w/ Solr for Post.title example
+  %br
+  This will match posts with the query anywhere in the title, as long as it's from the beginning of a word.
+  %br
+  So, a post with title "We Are the World" will match when the user types "worl", but not when they type "or"
+  %br
+  = text_field_tag 'query', params[:query] || nil, :name => "query", :autocomplete => "off", :class => 'autosuggest', :size => 50
+
